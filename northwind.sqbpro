@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Friends/Downloads/northwind.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="6188"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,29:mainAlphabetical list of products"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">select count(c.city) from customers as c ;
+SELECT c.City AS customer_city, COUNT(o.OrderID) AS count_of_orders
+FROM customers AS c
+INNER JOIN orders AS o ON c.CustomerID = o.CustomerID
+GROUP BY c.City;
+SELECT c.City AS customer_city, COUNT(o.OrderID) AS count_of_orders
+FROM customers AS c
+INNER JOIN orders AS o ON c.CustomerID = o.CustomerID
+WHERE c.City LIKE '%barcelona%'
+GROUP BY c.City;
+SELECT Categories.CategoryName AS category_name,
+       Products.ProductName AS product_name,
+       Products.UnitPrice AS product_price
+FROM Categories
+INNER JOIN Products ON Categories.CategoryID = Products.CategoryID
+GROUP by Categories.CategoryName,Products.ProductName,Products.UnitPrice;</sql><current_tab id="0"/></tab_sql></sqlb_project>
